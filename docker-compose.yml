@@ -16,6 +16,9 @@ services:
       # select your network here:
 #      - .env.sepolia
 #      - .env.mainnet
+    security_opt:
+      - no-new-privileges:true
+    user: "nodeuser"
   node:
     build:
       context: .
@@ -33,3 +36,6 @@ services:
       # select your network here:
 #      - .env.sepolia
 #      - .env.mainnet
+    security_opt:
+      - no-new-privileges:true
+    user: "nodeuser"

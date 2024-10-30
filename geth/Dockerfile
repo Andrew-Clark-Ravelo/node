@@ -32,6 +32,12 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists
 RUN mkdir -p /var/log/supervisor
 
+# Create a non-root user
+RUN useradd -m -s /bin/bash nodeuser
+
+# Switch to the non-root user
+USER nodeuser
+
 WORKDIR /app
 
 COPY --from=op /app/op-node/bin/op-node ./
