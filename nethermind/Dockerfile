@@ -39,6 +39,12 @@ RUN apt-get update && \
 
 RUN mkdir -p /var/log/supervisor
 
+# Create a non-root user
+RUN useradd -m -s /bin/bash nodeuser
+
+# Switch to the non-root user
+USER nodeuser
+
 WORKDIR /app
 
 COPY --from=build /publish ./
