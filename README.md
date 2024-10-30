@@ -115,6 +115,15 @@ $( curl -s -d '{"id":0,"jsonrpc":"2.0","method":"optimism_syncStatus"}' -H "Cont
    jq -r .result.unsafe_l2.timestamp))/60)) minutes
 ```
 
+### Security
+
+To enhance the security of your node, follow these best practices:
+
+- Use secrets management tools to handle sensitive information, such as authentication tokens and passwords.
+- Regularly update your Docker images and dependencies to include the latest security patches.
+- Run Docker containers with the least privilege necessary to minimize potential attack surfaces.
+- Monitor your node for any suspicious activity and set up alerts for potential security incidents.
+
 ## Disclaimer
 
 We’re excited for you to build on Base 🔵 — but we want to make sure that you understand the nature of the node software and smart contracts offered here.
